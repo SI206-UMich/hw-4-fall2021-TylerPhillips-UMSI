@@ -123,7 +123,7 @@ class Stall:
 # string function.
     def __str__(self):
 
-        return "Hello, we are " + self.name + ". This is the current menu " + ",".join(self.inventory.keys()) + ". We charge $" + str(self.cost_per_food) + " per item. We have $" + str(self.earnings) + " in total."
+        return "Hello, we are " + (self.name) + ". This is the current menu " + ", ".join(self.inventory.keys()) + ". We charge $" + str(self.cost) + " per item. We have $" + str(self.earnings) + " in total."
 
 class TestAllMethods(unittest.TestCase):
 
@@ -250,6 +250,7 @@ class TestAllMethods(unittest.TestCase):
         
 ### Write main function
 def main():
+
     #Create different objects
     inventory3 = {"Grilled Cheese": 5, "Toast": 20, "Jam Packets": 50}
     inventory4 = {"Donut": 13, "Dove Bar":10, "Orange pop": 15}
@@ -292,6 +293,12 @@ def main():
     f11.validate_order(c6, s4, "Donut", 1) #(cashier1, first stall, item is burger, ordering 30/40-totalinventory os 40)
     f12.validate_order(c5, s3, "Grilled Cheese", 1)
     f13.validate_order(c6, s4, "Orange pop", 1)
+    print('\n')
+
+    print(Stall.__str__(s3))
+    print('\n')
+
+    print(Stall.__str__(s4))
     print('\n')
 
 if __name__ == "__main__":
